@@ -3,6 +3,8 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { generateImageRequestSchema } from "@shared/schema";
 import { z } from "zod";
+import { r2Service } from "../lib/cloudflare-r2";
+import { supabase } from "../lib/supabase";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Generate image endpoint
@@ -113,19 +115,37 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // File upload endpoint for handling images
+  // Get presigned URL for Cloudflare R2 upload
+  app.post("/api/upload-url", async (req, res) => {
+    try {
+      const { fileType = "image/jpeg" } = req.body;
+      
+      // Generate unique key for the image
+      const imageKey = r2Service.generateImageKey('uploads');
+      
+      // Get presigned upload URL
+      const uploadUrl = await r2Service.getUploadUrl(imageKey, fileType);
+      
+      res.json({ 
+        uploadUrl,
+        imageKey,
+        publicUrl: r2Service.getPublicUrl(imageKey)
+      });
+    } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+      res.status(500).json({ error: "Failed to get upload URL", message: errorMessage });
+    }
+  });
+
+  // File upload endpoint for handling images (fallback)
   app.post("/api/upload-image", async (req, res) => {
     try {
-      // This would handle multipart form data in a real implementation
-      // For now, we'll expect base64 data
       const { imageData, filename } = req.body;
       
       if (!imageData) {
         return res.status(400).json({ error: "No image data provided" });
       }
 
-      // In a real implementation, you'd save this to storage
-      // For now, we'll just return the data URL
       const dataUrl = imageData.startsWith('data:') ? imageData : `data:image/jpeg;base64,${imageData}`;
       
       res.json({ 
