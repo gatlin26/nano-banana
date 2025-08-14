@@ -3,8 +3,8 @@
 import { useState, useCallback } from 'react'
 import { useDropzone } from 'react-dropzone'
 import { CloudUpload } from 'lucide-react'
-import { uploadImageToR2 } from '../../lib/api-client'
-import { useToast } from '../../lib/hooks/use-toast'
+import { uploadImageToR2 } from '../lib/api-client'
+import { useToast } from '../lib/use-toast'
 import { motion } from 'framer-motion'
 
 interface FileUploadProps {
@@ -77,9 +77,7 @@ export function FileUpload({ onUpload, disabled }: FileUploadProps) {
         Reference Image
       </motion.h3>
       
-      <motion.div 
-        whileHover={{ scale: uploading || disabled ? 1 : 1.02 }}
-        whileTap={{ scale: uploading || disabled ? 1 : 0.98 }}
+      <div 
         {...getRootProps()} 
         className={`border-2 border-dashed rounded-xl p-8 text-center cursor-pointer transition-colors ${
           isDragActive 
@@ -125,7 +123,7 @@ export function FileUpload({ onUpload, disabled }: FileUploadProps) {
             <p className="text-sm text-gray-500">JPEG, PNG, or WebP • Max 5MB</p>
           </motion.div>
         )}
-      </motion.div>
+      </div>
     </motion.div>
   )
 }

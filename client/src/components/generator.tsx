@@ -9,7 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from './ui/card'
 import { Loader2, Wand2, Upload, Download } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { generateImage, uploadImageToR2, type GeneratedImage } from '../lib/api-client'
-import { useToast } from '../hooks/use-toast'
+import { useToast } from '../lib/use-toast'
 import { FileUpload } from './file-upload'
 
 export function Generator() {

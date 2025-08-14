@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { Link } from 'wouter'
 
 export default function Footer() {
   return (
