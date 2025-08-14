@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import Logo from '@/components/ui/logo'
 
 export default function Footer() {
   return (
@@ -16,8 +17,8 @@ export default function Footer() {
               transition={{ duration: 0.6 }}
               className="mb-4"
             >
-              <Link href="/" className="text-2xl font-bold text-banana-400">
-                🍌 Nano Banana
+              <Link href="/">
+                <Logo size="md" showText={true} className="text-banana-400" />
               </Link>
             </motion.div>
             <motion.p 

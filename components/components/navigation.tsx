@@ -2,7 +2,7 @@
 
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Wand2 } from "lucide-react";
+import Logo from "@/components/ui/logo";
 
 export default function Navigation() {
   const [location] = useLocation();
@@ -19,9 +19,8 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/">
-            <div className="flex items-center space-x-2 cursor-pointer">
-              <Wand2 className="text-2xl text-banana-500" />
-              <span className="text-xl font-bold text-gray-900">Nano Banana</span>
+            <div className="cursor-pointer">
+              <Logo size="md" showText={true} />
             </div>
           </Link>
           

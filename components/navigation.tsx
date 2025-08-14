@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import Logo from '@/components/ui/logo'
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -22,8 +23,8 @@ export default function Navigation() {
             whileHover={{ scale: 1.05 }}
             className="flex items-center"
           >
-            <Link href="/" className="text-2xl font-bold text-banana-600">
-              🍌 Nano Banana
+            <Link href="/">
+              <Logo size="md" showText={true} />
             </Link>
           </motion.div>
 
