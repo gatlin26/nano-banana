@@ -1,7 +1,9 @@
-import { Link } from "wouter";
-import { Button } from "@/components/ui/button";
-import { Crown, Rocket, Play, CheckCircle } from "lucide-react";
-import { motion } from "framer-motion";
+'use client'
+
+
+import { Button } from './ui/button'
+import { Crown, Rocket, Play } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 export default function Hero() {
   return (
@@ -44,41 +46,54 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
           >
-            <Link href="/generator">
+            <a href="#generator">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button size="lg" className="bg-banana-500 text-white hover:bg-banana-600 shadow-lg">
                   <Rocket className="w-5 h-5 mr-2" />
                   Start Editing Free
                 </Button>
               </motion.div>
-            </Link>
-            <Link href="/showcase">
+            </a>
+            <a href="#showcase">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button size="lg" variant="outline" className="border-2 border-gray-200 text-gray-700 hover:border-banana-300 hover:text-banana-600">
                   <Play className="w-5 h-5 mr-2" />
                   View Examples
                 </Button>
               </motion.div>
-            </Link>
+            </a>
           </motion.div>
-          
-          {/* Feature Highlights */}
-          <div className="flex flex-wrap justify-center gap-6 text-sm">
-            <div className="flex items-center space-x-2 text-gray-600">
-              <CheckCircle className="w-4 h-4 text-banana-green-500" />
-              <span>One-shot editing</span>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.8 }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
+          >
+            <div className="text-center">
+              <div className="w-16 h-16 bg-banana-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Crown className="w-8 h-8 text-banana-600" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Character Consistency</h3>
+              <p className="text-gray-600">Maintains character features across all transformations</p>
             </div>
-            <div className="flex items-center space-x-2 text-gray-600">
-              <CheckCircle className="w-4 h-4 text-banana-green-500" />
-              <span>Multi-image support</span>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-banana-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Rocket className="w-8 h-8 text-banana-600" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">One-Shot Editing</h3>
+              <p className="text-gray-600">Perfect results in a single generation attempt</p>
             </div>
-            <div className="flex items-center space-x-2 text-gray-600">
-              <CheckCircle className="w-4 h-4 text-banana-green-500" />
-              <span>Natural language</span>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-banana-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Play className="w-8 h-8 text-banana-600" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Scene Preservation</h3>
+              <p className="text-gray-600">Keeps original scene context and composition</p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
-  );
+  )
 }

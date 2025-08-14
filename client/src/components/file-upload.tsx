@@ -1,52 +1,53 @@
-import { useState, useCallback } from "react";
-import { useDropzone } from "react-dropzone";
-import { CloudUpload } from "lucide-react";
-import { uploadImageToR2 } from "@/lib/api-client";
-import { useToast } from "@/hooks/use-toast";
-import { motion } from "framer-motion";
+'use client'
+
+import { useState, useCallback } from 'react'
+import { useDropzone } from 'react-dropzone'
+import { CloudUpload } from 'lucide-react'
+import { uploadImageToR2 } from '../../lib/api-client'
+import { useToast } from '../../lib/hooks/use-toast'
+import { motion } from 'framer-motion'
 
 interface FileUploadProps {
-  onUpload: (url: string) => void;
-  disabled?: boolean;
+  onUpload: (url: string) => void
+  disabled?: boolean
 }
 
-export default function FileUpload({ onUpload, disabled }: FileUploadProps) {
-  const [uploading, setUploading] = useState(false);
-  const { toast } = useToast();
+export function FileUpload({ onUpload, disabled }: FileUploadProps) {
+  const [uploading, setUploading] = useState(false)
+  const { toast } = useToast()
 
   const onDrop = useCallback(async (acceptedFiles: File[]) => {
-    if (acceptedFiles.length === 0) return;
+    if (acceptedFiles.length === 0) return
+
+    const file = acceptedFiles[0]
     
-    const file = acceptedFiles[0];
-    
-    // Validate file size (max 5MB)
     if (file.size > 5 * 1024 * 1024) {
       toast({
         title: "File too large",
         description: "Please select an image smaller than 5MB",
         variant: "destructive",
-      });
-      return;
+      })
+      return
     }
 
-    setUploading(true);
+    setUploading(true)
     try {
-      const result = await uploadImageToR2(file);
-      onUpload(result.url);
+      const result = await uploadImageToR2(file)
+      onUpload(result.url)
       toast({
         title: "Image uploaded successfully",
         description: `Uploaded ${result.filename} to Cloudflare R2`,
-      });
+      })
     } catch (error) {
       toast({
         title: "Upload failed",
         description: "There was an error uploading your image. Please try again.",
         variant: "destructive",
-      });
+      })
     } finally {
-      setUploading(false);
+      setUploading(false)
     }
-  }, [onUpload, toast]);
+  }, [onUpload, toast])
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
@@ -57,7 +58,7 @@ export default function FileUpload({ onUpload, disabled }: FileUploadProps) {
     },
     maxFiles: 1,
     disabled: disabled || uploading
-  });
+  })
 
   return (
     <motion.div 
@@ -126,5 +127,5 @@ export default function FileUpload({ onUpload, disabled }: FileUploadProps) {
         )}
       </motion.div>
     </motion.div>
-  );
+  )
 }

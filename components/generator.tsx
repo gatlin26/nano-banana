@@ -9,7 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Loader2, Wand2, Upload, Download } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { generateImage, uploadImageToR2, type GeneratedImage } from '@/lib/api-client'
-import { useToast } from '@/lib/use-toast'
+import { useToast } from '@/lib/hooks/use-toast'
 import { FileUpload } from '@/components/file-upload'
 
 export function Generator() {
@@ -53,7 +53,7 @@ export function Generator() {
       image: imageUrl || undefined,
       dimensions,
       style,
-    })
+    } as any)
   }
 
   const handleImageUpload = async (url: string) => {
@@ -65,7 +65,7 @@ export function Generator() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
+    <div className="bg-gray-50 py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

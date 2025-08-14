@@ -29,28 +29,28 @@ export default function Navigation() {
 
           {/* Desktop menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-gray-700 hover:text-banana-600 transition-colors">
+            <a href="#home" className="text-gray-700 hover:text-banana-600 transition-colors">
               Home
-            </Link>
-            <Link href="/generator" className="text-gray-700 hover:text-banana-600 transition-colors">
+            </a>
+            <a href="#generator" className="text-gray-700 hover:text-banana-600 transition-colors">
               Generator
-            </Link>
-            <Link href="/showcase" className="text-gray-700 hover:text-banana-600 transition-colors">
+            </a>
+            <a href="#showcase" className="text-gray-700 hover:text-banana-600 transition-colors">
               Showcase
-            </Link>
-            <Link href="/how-it-works" className="text-gray-700 hover:text-banana-600 transition-colors">
+            </a>
+            <a href="#how-it-works" className="text-gray-700 hover:text-banana-600 transition-colors">
               How it Works
-            </Link>
-            <Link href="/faq" className="text-gray-700 hover:text-banana-600 transition-colors">
+            </a>
+            <a href="#faq" className="text-gray-700 hover:text-banana-600 transition-colors">
               FAQ
-            </Link>
-            <Link href="/generator">
+            </a>
+            <a href="#generator">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button className="bg-banana-500 text-white hover:bg-banana-600">
                   Try Now
                 </Button>
               </motion.div>
-            </Link>
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -73,26 +73,26 @@ export default function Navigation() {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden py-4 space-y-4"
           >
-            <Link href="/" className="block text-gray-700 hover:text-banana-600 transition-colors">
+            <a href="#home" className="block text-gray-700 hover:text-banana-600 transition-colors">
               Home
-            </Link>
-            <Link href="/generator" className="block text-gray-700 hover:text-banana-600 transition-colors">
+            </a>
+            <a href="#generator" className="block text-gray-700 hover:text-banana-600 transition-colors">
               Generator
-            </Link>
-            <Link href="/showcase" className="block text-gray-700 hover:text-banana-600 transition-colors">
+            </a>
+            <a href="#showcase" className="block text-gray-700 hover:text-banana-600 transition-colors">
               Showcase
-            </Link>
-            <Link href="/how-it-works" className="block text-gray-700 hover:text-banana-600 transition-colors">
+            </a>
+            <a href="#how-it-works" className="block text-gray-700 hover:text-banana-600 transition-colors">
               How it Works
-            </Link>
-            <Link href="/faq" className="block text-gray-700 hover:text-banana-600 transition-colors">
+            </a>
+            <a href="#faq" className="block text-gray-700 hover:text-banana-600 transition-colors">
               FAQ
-            </Link>
-            <Link href="/generator">
+            </a>
+            <a href="#generator">
               <Button className="w-full bg-banana-500 text-white hover:bg-banana-600">
                 Try Now
               </Button>
-            </Link>
+            </a>
           </motion.div>
         )}
       </div>
