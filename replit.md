@@ -13,6 +13,11 @@ Nano Banana is a modern full-stack web application for AI-powered image editing 
   - Fixed import paths for use-toast hook
   - Created server/index.ts bridge for development workflow compatibility
   - Configured Next.js to run on port 5000 for Replit environment
+- **Architecture Cleanup**: Removed all Vite dependencies and configurations
+  - Uninstalled vite, @vitejs/plugin-react, and Replit Vite plugins
+  - Removed Vite-specific configurations while maintaining Next.js setup
+  - Project now uses pure Next.js architecture without hybrid Vite/Next.js configuration
+  - Build and deployment processes are fully Next.js native
 
 # User Preferences
 
