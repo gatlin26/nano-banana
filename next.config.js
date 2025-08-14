@@ -27,6 +27,13 @@ const nextConfig = {
   // Configure for Replit deployment
   output: 'standalone',
   outputFileTracingRoot: process.cwd(),
+  // Additional deployment settings for Replit
+  trailingSlash: false,
+  // Ensure proper handling of environment variables
+  env: {
+    CUSTOM_KEY: process.env.CUSTOM_KEY,
+  },
+
 }
 
 export default nextConfig
