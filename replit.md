@@ -1,6 +1,12 @@
 # Overview
 
-Nano Banana is a modern full-stack web application for AI-powered image editing and generation. The platform allows users to transform images using natural language prompts, leveraging the Nano Banana AI model which specializes in character consistency and scene preservation. Built with a React frontend and Express backend, the application provides an intuitive interface for uploading images, describing desired transformations, and generating high-quality results.
+Nano Banana is a modern full-stack web application for AI-powered image editing and generation. The platform allows users to transform images using natural language prompts, leveraging the Nano Banana AI model which specializes in character consistency and scene preservation. Built with Next.js 15 using App Router, the application provides an intuitive interface for uploading images, describing desired transformations, and generating high-quality results.
+
+## Recent Changes (August 14, 2025)
+- **Architecture Migration**: Converted from Express/Vite setup to Next.js 15 with App Router
+- **Directory Structure**: Removed client/ and server/ directories, consolidated into Next.js app/ directory
+- **Configuration**: Updated next.config.js to use ES module syntax (export default)
+- **Component Structure**: Moved components to root components/ directory with existing UI components
 
 # User Preferences
 

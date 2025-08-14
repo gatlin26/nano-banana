@@ -31,4 +31,4 @@ const nextConfig = {
   // skipTrailingSlashRedirect: true,
 }
 
-module.exports = nextConfig
+export default nextConfig
