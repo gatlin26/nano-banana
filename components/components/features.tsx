@@ -1,3 +1,5 @@
+"use client"
+
 import { MessageSquare, UserCheck, Layers, Zap, Images, Star } from "lucide-react";
 
 export default function Features() {

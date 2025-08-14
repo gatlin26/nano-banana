@@ -1,4 +1,6 @@
 // Toast hook for notifications
+"use client"
+
 import { useState, useCallback } from 'react'
 
 export interface Toast {

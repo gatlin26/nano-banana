@@ -1,3 +1,5 @@
+"use client"
+
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Wand2 } from "lucide-react";

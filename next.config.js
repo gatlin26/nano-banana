@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
   images: {
     domains: ['nano-gpt.com', 'storage.googleapis.com'],
     unoptimized: true, // For Replit deployment compatibility
