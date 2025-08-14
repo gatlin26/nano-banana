@@ -24,10 +24,9 @@ const nextConfig = {
     }
     return config;
   },
-  // Enable static export for Replit deployments if needed
-  // output: 'export',
-  // trailingSlash: true,
-  // skipTrailingSlashRedirect: true,
+  // Configure for Replit deployment
+  output: 'standalone',
+  outputFileTracingRoot: process.cwd(),
 }
 
 export default nextConfig

@@ -4,7 +4,7 @@ import { useState, useCallback } from 'react'
 import { useDropzone } from 'react-dropzone'
 import { CloudUpload } from 'lucide-react'
 import { uploadImageToR2 } from '@/lib/api-client'
-import { useToast } from '@/lib/hooks/use-toast'
+import { useToast } from '@/lib/use-toast'
 import { motion } from 'framer-motion'
 
 interface FileUploadProps {

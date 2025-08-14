@@ -7,6 +7,12 @@ Nano Banana is a modern full-stack web application for AI-powered image editing 
 - **Directory Structure**: Removed client/ and server/ directories, consolidated into Next.js app/ directory
 - **Configuration**: Updated next.config.js to use ES module syntax (export default)
 - **Component Structure**: Moved components to root components/ directory with existing UI components
+- **Deployment Fix**: Created proper Next.js deployment configuration
+  - Added build.js and start.js scripts for Replit deployment compatibility
+  - Updated next.config.js with standalone output for production builds
+  - Fixed import paths for use-toast hook
+  - Created server/index.ts bridge for development workflow compatibility
+  - Configured Next.js to run on port 5000 for Replit environment
 
 # User Preferences
 

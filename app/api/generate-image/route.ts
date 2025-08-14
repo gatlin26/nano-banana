@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { generateImageRequestSchema, type GeneratedImage } from '@shared/schema'
-import { storage } from '../../../server/storage'
+import { generateImageRequestSchema, type ImageGeneration } from '@/shared/schema'
+import { storage } from '@/lib/storage'
 
 const NANO_GPT_API_URL = 'https://nano-gpt.com/v1/images/generations'
 
@@ -12,10 +12,10 @@ export async function POST(request: NextRequest) {
     // Create pending generation record
     const generation = await storage.createGeneration({
       prompt: validatedData.prompt,
-      originalImageUrl: validatedData.image || null,
+      originalImageUrl: validatedData.originalImageUrl || null,
       model: 'hidream', // Fixed model for Nano Banana
       dimensions: validatedData.dimensions || '1024x1024',
-      style: validatedData.style || 'auto',
+      style: validatedData.style || 'realistic',
       status: 'pending',
       generatedImageUrl: '',
       metadata: {}
@@ -31,7 +31,7 @@ export async function POST(request: NextRequest) {
       body: JSON.stringify({
         model: 'hidream',
         prompt: validatedData.prompt,
-        image: validatedData.image,
+        image: validatedData.originalImageUrl,
         width: parseInt(validatedData.dimensions?.split('x')[0] || '1024'),
         height: parseInt(validatedData.dimensions?.split('x')[1] || '1024'),
         style: validatedData.style,
