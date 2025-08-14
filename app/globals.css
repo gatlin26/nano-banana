@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+    
+    /* Banana theme colors */
+    --banana-50: 54 100% 97%;
+    --banana-100: 54 100% 90%;
+    --banana-200: 54 100% 80%;
+    --banana-300: 54 100% 70%;
+    --banana-400: 54 100% 60%;
+    --banana-500: 54 100% 50%;
+    --banana-600: 54 100% 40%;
+    --banana-700: 54 100% 30%;
+    --banana-800: 54 100% 20%;
+    --banana-900: 54 100% 10%;
+    
+    --banana-green-50: 84 100% 97%;
+    --banana-green-100: 84 100% 90%;
+    --banana-green-200: 84 100% 80%;
+    --banana-green-300: 84 100% 70%;
+    --banana-green-400: 84 100% 60%;
+    --banana-green-500: 84 100% 50%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 94.1%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Banana theme utilities */
+.text-banana-50 { color: hsl(var(--banana-50)); }
+.text-banana-100 { color: hsl(var(--banana-100)); }
+.text-banana-200 { color: hsl(var(--banana-200)); }
+.text-banana-300 { color: hsl(var(--banana-300)); }
+.text-banana-400 { color: hsl(var(--banana-400)); }
+.text-banana-500 { color: hsl(var(--banana-500)); }
+.text-banana-600 { color: hsl(var(--banana-600)); }
+.text-banana-700 { color: hsl(var(--banana-700)); }
+.text-banana-800 { color: hsl(var(--banana-800)); }
+.text-banana-900 { color: hsl(var(--banana-900)); }
+
+.bg-banana-50 { background-color: hsl(var(--banana-50)); }
+.bg-banana-100 { background-color: hsl(var(--banana-100)); }
+.bg-banana-200 { background-color: hsl(var(--banana-200)); }
+.bg-banana-300 { background-color: hsl(var(--banana-300)); }
+.bg-banana-400 { background-color: hsl(var(--banana-400)); }
+.bg-banana-500 { background-color: hsl(var(--banana-500)); }
+.bg-banana-600 { background-color: hsl(var(--banana-600)); }
+.bg-banana-700 { background-color: hsl(var(--banana-700)); }
+.bg-banana-800 { background-color: hsl(var(--banana-800)); }
+.bg-banana-900 { background-color: hsl(var(--banana-900)); }
+
+.bg-banana-green-50 { background-color: hsl(var(--banana-green-50)); }
+.bg-banana-green-100 { background-color: hsl(var(--banana-green-100)); }
+.bg-banana-green-200 { background-color: hsl(var(--banana-green-200)); }
+.bg-banana-green-300 { background-color: hsl(var(--banana-green-300)); }
+.bg-banana-green-400 { background-color: hsl(var(--banana-green-400)); }
+.bg-banana-green-500 { background-color: hsl(var(--banana-green-500)); }
+
+.border-banana-300 { border-color: hsl(var(--banana-300)); }
+.border-banana-400 { border-color: hsl(var(--banana-400)); }
+.border-banana-500 { border-color: hsl(var(--banana-500)); }
+
+.hover\:bg-banana-600:hover { background-color: hsl(var(--banana-600)); }
+.hover\:border-banana-300:hover { border-color: hsl(var(--banana-300)); }
+.hover\:border-banana-400:hover { border-color: hsl(var(--banana-400)); }
+.hover\:text-banana-600:hover { color: hsl(var(--banana-600)); }

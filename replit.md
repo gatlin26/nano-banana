@@ -9,24 +9,27 @@ Preferred communication style: Simple, everyday language.
 # System Architecture
 
 ## Frontend Architecture
-The client-side is built with React and TypeScript, utilizing a modern component-based architecture:
+The client-side is built with Next.js 13+ using App Router and TypeScript:
+- **Framework**: Next.js 13+ with App Router for modern React development
 - **UI Framework**: React with TypeScript for type safety
 - **Styling**: Tailwind CSS with shadcn/ui component library for consistent design
-- **Routing**: Wouter for lightweight client-side routing
+- **Routing**: Next.js App Router with file-based routing system
 - **State Management**: TanStack Query for server state management and caching
-- **Build Tool**: Vite for fast development and optimized production builds
+- **Animations**: Framer Motion for smooth UI transitions and micro-interactions
+- **Build Tool**: Next.js built-in compiler for optimized production builds
 
-The frontend follows a page-based structure with reusable components, including a dedicated image generator interface, file upload handling, and responsive navigation.
+The frontend follows Next.js App Router structure with server and client components, API routes, and reusable UI components with enhanced animations.
 
 ## Backend Architecture
-The server-side uses Express.js with TypeScript:
-- **Runtime**: Node.js with TSX for TypeScript execution
-- **API Framework**: Express.js with RESTful endpoints
-- **Request Handling**: JSON and URL-encoded body parsing
-- **Error Handling**: Centralized error middleware with proper status codes
-- **Development**: Hot-reload support via Vite integration
+The server-side uses Next.js API Routes with TypeScript:
+- **Framework**: Next.js App Router with API routes
+- **Runtime**: Node.js with Next.js built-in TypeScript support
+- **API Framework**: Next.js API routes with RESTful endpoints
+- **Request Handling**: Native Next.js request/response handling
+- **Error Handling**: Next.js error boundaries and middleware
+- **Development**: Next.js hot-reload and fast refresh
 
-The API provides endpoints for image generation, file uploads, and status tracking, with proper validation using Zod schemas.
+The API provides endpoints for image generation, file uploads, and status tracking, with proper validation using Zod schemas and integration with external services.
 
 ## Data Storage
 The application uses a flexible storage architecture:
