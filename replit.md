@@ -24,6 +24,13 @@ Nano Banana is a modern full-stack web application for AI-powered image editing 
   - Confirmed build process works successfully without Vite dependencies
   - Updated documentation to reflect Next.js-only architecture
   - All deployment scripts properly reference Next.js commands instead of Vite
+- **Database Removal**: Completely removed all Drizzle ORM and database dependencies
+  - Uninstalled drizzle-orm, drizzle-zod, drizzle-kit packages
+  - Removed @neondatabase/serverless and connect-pg-simple dependencies
+  - Converted to pure in-memory storage using Zod schemas for type validation
+  - Updated shared/schema.ts to use plain Zod schemas instead of Drizzle tables
+  - Simplified storage.ts to use only MemoryStorage implementation
+  - Removed all database migration and connection logic
 
 # User Preferences
 
@@ -55,13 +62,12 @@ The server-side uses Next.js API Routes with TypeScript:
 The API provides endpoints for image generation, file uploads, and status tracking, with proper validation using Zod schemas and integration with external services.
 
 ## Data Storage
-The application uses a flexible storage architecture:
-- **Database**: PostgreSQL with Drizzle ORM for type-safe database operations
-- **Schema Management**: Drizzle Kit for migrations and schema synchronization
-- **Development Storage**: In-memory storage implementation for rapid prototyping
-- **Production Storage**: Database-backed storage with user management and image generation tracking
+The application uses an in-memory storage architecture:
+- **Storage**: In-memory storage implementation for rapid prototyping and development
+- **Schema Validation**: Zod schemas for type-safe data validation and serialization
+- **Data Management**: Simple storage interface for image generation tracking and metadata
 
-The schema includes users, image generations with metadata tracking, and support for various AI models and parameters.
+The schema includes image generations with metadata tracking, supporting various AI models and parameters without database dependencies.
 
 ## File Handling
 Image uploads are processed through multiple strategies:
@@ -84,10 +90,10 @@ The application integrates with the Nano GPT API for image generation:
 - **Authentication**: Bearer token authentication with API key management
 - **Models**: Supports multiple AI models with "hidream" as the recommended default
 
-## Database Infrastructure
-- **Neon Database**: Serverless PostgreSQL hosting via `@neondatabase/serverless`
-- **Drizzle ORM**: Type-safe database operations and migrations
-- **Connection**: Environment variable-based database URL configuration
+## Storage Infrastructure
+- **In-Memory Storage**: Lightweight data storage for development and prototyping
+- **Type Safety**: Zod schema validation for data consistency
+- **Session Management**: Memory-based storage with automatic cleanup
 
 ## Cloud Services
 - **Google Cloud Storage**: File storage and hosting via `@google-cloud/storage`

@@ -1,6 +1,0 @@
-{
-  "/api/generate-image/route": "/api/generate-image",
-  "/_not-found/page": "/_not-found",
-  "/api/upload-url/route": "/api/upload-url",
-  "/page": "/"
-}

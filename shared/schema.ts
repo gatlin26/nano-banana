@@ -1,41 +1,40 @@
-import { sql } from "drizzle-orm";
-import { pgTable, text, varchar, timestamp, jsonb, integer, uuid } from "drizzle-orm/pg-core";
-import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
-export const users = pgTable("users", {
-  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
-  username: text("username").notNull().unique(),
-  email: text("email").notNull().unique(),
-  createdAt: timestamp("created_at").defaultNow(),
+// User schemas
+export const userSchema = z.object({
+  id: z.string(),
+  username: z.string(),
+  email: z.string().email(),
+  createdAt: z.date(),
 });
 
-export const imageGenerations = pgTable("image_generations", {
-  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
-  userId: varchar("user_id").references(() => users.id),
-  prompt: text("prompt").notNull(),
-  originalImageUrl: text("original_image_url"),
-  generatedImageUrl: text("generated_image_url").notNull(),
-  model: text("model").notNull().default("nano-banana"),
-  dimensions: text("dimensions").notNull().default("1024x1024"),
-  style: text("style").notNull().default("realistic"),
-  status: text("status").notNull().default("pending"), // pending, completed, failed
-  metadata: jsonb("metadata"),
-  createdAt: timestamp("created_at").defaultNow(),
+export const insertUserSchema = z.object({
+  username: z.string().min(1).max(100),
+  email: z.string().email(),
 });
 
-export const insertUserSchema = createInsertSchema(users).pick({
-  username: true,
-  email: true,
+// Image generation schemas
+export const imageGenerationSchema = z.object({
+  id: z.string(),
+  userId: z.string().nullable(),
+  prompt: z.string(),
+  originalImageUrl: z.string().nullable(),
+  generatedImageUrl: z.string(),
+  model: z.string(),
+  dimensions: z.string(),
+  style: z.string(),
+  status: z.enum(["pending", "completed", "failed"]),
+  metadata: z.any().nullable(),
+  createdAt: z.date(),
 });
 
-export const insertImageGenerationSchema = createInsertSchema(imageGenerations).pick({
-  prompt: true,
-  originalImageUrl: true,
-  model: true,
-  dimensions: true,
-  style: true,
-  metadata: true,
+export const insertImageGenerationSchema = z.object({
+  prompt: z.string().min(1).max(500),
+  originalImageUrl: z.string().optional(),
+  model: z.string().default("nano-banana"),
+  dimensions: z.string().default("1024x1024"),
+  style: z.string().default("realistic"),
+  metadata: z.any().optional(),
 });
 
 export const generateImageRequestSchema = z.object({
@@ -46,8 +45,9 @@ export const generateImageRequestSchema = z.object({
   style: z.string().default("realistic"),
 });
 
+// Type exports
+export type User = z.infer<typeof userSchema>;
 export type InsertUser = z.infer<typeof insertUserSchema>;
-export type User = typeof users.$inferSelect;
+export type ImageGeneration = z.infer<typeof imageGenerationSchema>;
 export type InsertImageGeneration = z.infer<typeof insertImageGenerationSchema>;
-export type ImageGeneration = typeof imageGenerations.$inferSelect;
 export type GenerateImageRequest = z.infer<typeof generateImageRequestSchema>;
