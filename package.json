@@ -4,15 +4,11 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-    "dev": "cross-env NODE_NO_WARNINGS=1 next dev --turbopack",
+    "dev": "cross-env NODE_NO_WARNINGS=1 next dev",
     "build": "next build",
     "start": "NODE_NO_WARNINGS=1 next start",
     "lint": "next lint",
     "analyze": "ANALYZE=true pnpm build",
-    "cf:build": "npx @cloudflare/next-on-pages",
-    "cf:preview": "pnpm cf:build && wrangler pages dev",
-    "cf:deploy": "pnpm cf:build && wrangler pages deploy",
-    "docker:build": "docker build -f Dockerfile -t shipany-template-one:latest ."
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.864.0",

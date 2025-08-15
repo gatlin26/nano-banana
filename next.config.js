@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: ['nano-gpt.com', 'storage.googleapis.com'],
-    unoptimized: true, // For Replit deployment compatibility
+    unoptimized: false, // 移除 Replit 兼容性设置
   },
   async rewrites() {
     return [
@@ -24,16 +24,14 @@ const nextConfig = {
     }
     return config;
   },
-  // Configure for Replit deployment
-  output: 'standalone',
-  outputFileTracingRoot: process.cwd(),
-  // Additional deployment settings for Replit
+  // 移除 Replit 特定的部署设置
+  // output: 'standalone', // Vercel 不支持
+  // outputFileTracingRoot: process.cwd(), // Vercel 不需要
   trailingSlash: false,
-  // Ensure proper handling of environment variables
+  // 确保环境变量正确传递
   env: {
     CUSTOM_KEY: process.env.CUSTOM_KEY,
   },
-
 }
 
 export default nextConfig
