@@ -92,7 +92,7 @@ export function Generator() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <Upload className="w-5 h-5 mr-2 text-banana-500" />
+                  <Upload className="w-5 h-5 mr-2 text-blue-600" />
                   Upload Reference Image
                 </CardTitle>
               </CardHeader>
@@ -117,7 +117,7 @@ export function Generator() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <Wand2 className="w-5 h-5 mr-2 text-banana-500" />
+                  <Wand2 className="w-5 h-5 mr-2 text-blue-600" />
                   Generation Settings
                 </CardTitle>
               </CardHeader>
@@ -172,7 +172,7 @@ export function Generator() {
                 <Button
                   onClick={handleGenerate}
                   disabled={generateMutation.isPending}
-                  variant="banana"
+                  variant="blue"
                   className="w-full"
                   size="lg"
                 >
@@ -201,14 +201,14 @@ export function Generator() {
             <Card className="h-full">
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <Download className="w-5 h-5 mr-2 text-banana-500" />
+                  <Download className="w-5 h-5 mr-2 text-blue-600" />
                   Generated Result
                 </CardTitle>
               </CardHeader>
               <CardContent className="flex items-center justify-center min-h-[500px]">
                 {generateMutation.isPending ? (
                   <div className="text-center">
-                    <Loader2 className="w-12 h-12 animate-spin text-banana-500 mx-auto mb-4" />
+                    <Loader2 className="w-12 h-12 animate-spin text-blue-600 mx-auto mb-4" />
                     <p className="text-gray-600">Generating your image...</p>
                   </div>
                 ) : generatedImage ? (

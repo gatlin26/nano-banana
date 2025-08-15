@@ -25,17 +25,17 @@
     --ring: 221.2 83.2% 53.3%;
     --radius: 0.5rem;
     
-    /* Banana theme colors - Improved contrast */
-    --banana-50: 54 100% 97%;
-    --banana-100: 54 100% 90%;
-    --banana-200: 54 100% 80%;
-    --banana-300: 54 100% 70%;
-    --banana-400: 54 95% 55%;
-    --banana-500: 54 90% 45%;
-    --banana-600: 54 85% 35%;
-    --banana-700: 54 80% 25%;
-    --banana-800: 54 75% 15%;
-    --banana-900: 54 70% 10%;
+    /* Modern Blue theme colors */
+    --blue-50: 219 100% 97%;
+    --blue-100: 219 95% 90%;
+    --blue-200: 219 91% 80%;
+    --blue-300: 219 87% 70%;
+    --blue-400: 219 83% 60%;
+    --blue-500: 217 91% 60%;
+    --blue-600: 221 83% 53%;
+    --blue-700: 224 76% 48%;
+    --blue-800: 226 71% 40%;
+    --blue-900: 224 64% 33%;
     
     --banana-green-50: 84 100% 97%;
     --banana-green-100: 84 100% 90%;
@@ -78,28 +78,28 @@
   }
 }
 
-/* Banana theme utilities */
-.text-banana-50 { color: hsl(var(--banana-50)); }
-.text-banana-100 { color: hsl(var(--banana-100)); }
-.text-banana-200 { color: hsl(var(--banana-200)); }
-.text-banana-300 { color: hsl(var(--banana-300)); }
-.text-banana-400 { color: hsl(var(--banana-400)); }
-.text-banana-500 { color: hsl(var(--banana-500)); }
-.text-banana-600 { color: hsl(var(--banana-600)); }
-.text-banana-700 { color: hsl(var(--banana-700)); }
-.text-banana-800 { color: hsl(var(--banana-800)); }
-.text-banana-900 { color: hsl(var(--banana-900)); }
+/* Modern Blue theme utilities */
+.text-blue-50 { color: hsl(var(--blue-50)); }
+.text-blue-100 { color: hsl(var(--blue-100)); }
+.text-blue-200 { color: hsl(var(--blue-200)); }
+.text-blue-300 { color: hsl(var(--blue-300)); }
+.text-blue-400 { color: hsl(var(--blue-400)); }
+.text-blue-500 { color: hsl(var(--blue-500)); }
+.text-blue-600 { color: hsl(var(--blue-600)); }
+.text-blue-700 { color: hsl(var(--blue-700)); }
+.text-blue-800 { color: hsl(var(--blue-800)); }
+.text-blue-900 { color: hsl(var(--blue-900)); }
 
-.bg-banana-50 { background-color: hsl(var(--banana-50)); }
-.bg-banana-100 { background-color: hsl(var(--banana-100)); }
-.bg-banana-200 { background-color: hsl(var(--banana-200)); }
-.bg-banana-300 { background-color: hsl(var(--banana-300)); }
-.bg-banana-400 { background-color: hsl(var(--banana-400)); }
-.bg-banana-500 { background-color: hsl(var(--banana-500)); }
-.bg-banana-600 { background-color: hsl(var(--banana-600)); }
-.bg-banana-700 { background-color: hsl(var(--banana-700)); }
-.bg-banana-800 { background-color: hsl(var(--banana-800)); }
-.bg-banana-900 { background-color: hsl(var(--banana-900)); }
+.bg-blue-50 { background-color: hsl(var(--blue-50)); }
+.bg-blue-100 { background-color: hsl(var(--blue-100)); }
+.bg-blue-200 { background-color: hsl(var(--blue-200)); }
+.bg-blue-300 { background-color: hsl(var(--blue-300)); }
+.bg-blue-400 { background-color: hsl(var(--blue-400)); }
+.bg-blue-500 { background-color: hsl(var(--blue-500)); }
+.bg-blue-600 { background-color: hsl(var(--blue-600)); }
+.bg-blue-700 { background-color: hsl(var(--blue-700)); }
+.bg-blue-800 { background-color: hsl(var(--blue-800)); }
+.bg-blue-900 { background-color: hsl(var(--blue-900)); }
 
 .bg-banana-green-50 { background-color: hsl(var(--banana-green-50)); }
 .bg-banana-green-100 { background-color: hsl(var(--banana-green-100)); }
@@ -108,41 +108,41 @@
 .bg-banana-green-400 { background-color: hsl(var(--banana-green-400)); }
 .bg-banana-green-500 { background-color: hsl(var(--banana-green-500)); }
 
-.border-banana-300 { border-color: hsl(var(--banana-300)); }
-.border-banana-400 { border-color: hsl(var(--banana-400)); }
-.border-banana-500 { border-color: hsl(var(--banana-500)); }
+.border-blue-300 { border-color: hsl(var(--blue-300)); }
+.border-blue-400 { border-color: hsl(var(--blue-400)); }
+.border-blue-500 { border-color: hsl(var(--blue-500)); }
 
-.hover\:bg-banana-600:hover { background-color: hsl(var(--banana-600)); }
-.hover\:border-banana-300:hover { border-color: hsl(var(--banana-300)); }
-.hover\:border-banana-400:hover { border-color: hsl(var(--banana-400)); }
-.hover\:text-banana-600:hover { color: hsl(var(--banana-600)); }
+.hover\:bg-blue-600:hover { background-color: hsl(var(--blue-600)); }
+.hover\:border-blue-300:hover { border-color: hsl(var(--blue-300)); }
+.hover\:border-blue-400:hover { border-color: hsl(var(--blue-400)); }
+.hover\:text-blue-600:hover { color: hsl(var(--blue-600)); }
 
 /* Enhanced button states for better visibility */
-.focus\:ring-banana-400:focus { --tw-ring-color: hsl(var(--banana-400)); }
-.focus-visible\:ring-banana-400:focus-visible { --tw-ring-color: hsl(var(--banana-400)); }
-.active\:bg-banana-700:active { background-color: hsl(var(--banana-700)); }
+.focus\:ring-blue-400:focus { --tw-ring-color: hsl(var(--blue-400)); }
+.focus-visible\:ring-blue-400:focus-visible { --tw-ring-color: hsl(var(--blue-400)); }
+.active\:bg-blue-700:active { background-color: hsl(var(--blue-700)); }
 .active\:scale-95:active { transform: scale(0.95); }
 
-/* Custom banana button variant */
-.btn-banana {
-  background-color: hsl(var(--banana-500));
+/* Custom modern blue button variant */
+.btn-blue {
+  background-color: hsl(var(--blue-600));
   color: white;
   transition: all 0.2s ease-in-out;
 }
 
-.btn-banana:hover {
-  background-color: hsl(var(--banana-600));
+.btn-blue:hover {
+  background-color: hsl(var(--blue-700));
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px hsl(var(--banana-500) / 0.3);
+  box-shadow: 0 4px 12px hsl(var(--blue-600) / 0.3);
 }
 
-.btn-banana:focus-visible {
-  outline: 2px solid hsl(var(--banana-400));
+.btn-blue:focus-visible {
+  outline: 2px solid hsl(var(--blue-400));
   outline-offset: 2px;
 }
 
-.btn-banana:active {
-  background-color: hsl(var(--banana-700));
+.btn-blue:active {
+  background-color: hsl(var(--blue-800));
   transform: translateY(0px) scale(0.98);
-  box-shadow: 0 2px 6px hsl(var(--banana-500) / 0.2);
+  box-shadow: 0 2px 6px hsl(var(--blue-600) / 0.2);
 }

@@ -18,7 +18,7 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        banana: "btn-banana focus-visible:ring-banana-400 active:bg-banana-700 active:scale-95",
+        blue: "btn-blue focus-visible:ring-blue-400 active:bg-blue-700 active:scale-95",
       },
       size: {
         default: "h-10 px-4 py-2",
