@@ -4,11 +4,15 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-    "dev": "next dev --port 5000",
+    "dev": "cross-env NODE_NO_WARNINGS=1 next dev --turbopack",
     "build": "next build",
-    "start": "next start --port 5000",
-    "check": "tsc",
-    "db:push": "drizzle-kit push"
+    "start": "NODE_NO_WARNINGS=1 next start",
+    "lint": "next lint",
+    "analyze": "ANALYZE=true pnpm build",
+    "cf:build": "npx @cloudflare/next-on-pages",
+    "cf:preview": "pnpm cf:build && wrangler pages dev",
+    "cf:deploy": "pnpm cf:build && wrangler pages deploy",
+    "docker:build": "docker build -f Dockerfile -t shipany-template-one:latest ."
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.864.0",
