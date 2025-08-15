@@ -102,15 +102,7 @@ export default function FileUpload({ onUpload, disabled }: FileUploadProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
-            <p className="text-lg font-medium text-gray-700 mb-2">Uploading to Cloudflare R2...</p>
-            <div className="w-32 bg-gray-200 rounded-full h-2 mx-auto">
-              <motion.div 
-                className="bg-banana-500 h-2 rounded-full" 
-                initial={{ width: 0 }}
-                animate={{ width: "65%" }}
-                transition={{ duration: 1.5, ease: "easeInOut" }}
-              />
-            </div>
+            <p className="text-lg font-medium text-gray-700">Uploading to Cloudflare R2...</p>
           </motion.div>
         ) : (
           <motion.div
