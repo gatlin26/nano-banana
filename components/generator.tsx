@@ -172,7 +172,8 @@ export function Generator() {
                 <Button
                   onClick={handleGenerate}
                   disabled={generateMutation.isPending}
-                  className="w-full bg-banana-500 hover:bg-banana-600 text-white"
+                  variant="banana"
+                  className="w-full"
                   size="lg"
                 >
                   {generateMutation.isPending ? (

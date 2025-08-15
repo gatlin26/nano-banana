@@ -25,17 +25,17 @@
     --ring: 221.2 83.2% 53.3%;
     --radius: 0.5rem;
     
-    /* Banana theme colors */
+    /* Banana theme colors - Improved contrast */
     --banana-50: 54 100% 97%;
     --banana-100: 54 100% 90%;
     --banana-200: 54 100% 80%;
     --banana-300: 54 100% 70%;
-    --banana-400: 54 100% 60%;
-    --banana-500: 54 100% 50%;
-    --banana-600: 54 100% 40%;
-    --banana-700: 54 100% 30%;
-    --banana-800: 54 100% 20%;
-    --banana-900: 54 100% 10%;
+    --banana-400: 54 95% 55%;
+    --banana-500: 54 90% 45%;
+    --banana-600: 54 85% 35%;
+    --banana-700: 54 80% 25%;
+    --banana-800: 54 75% 15%;
+    --banana-900: 54 70% 10%;
     
     --banana-green-50: 84 100% 97%;
     --banana-green-100: 84 100% 90%;
@@ -116,3 +116,33 @@
 .hover\:border-banana-300:hover { border-color: hsl(var(--banana-300)); }
 .hover\:border-banana-400:hover { border-color: hsl(var(--banana-400)); }
 .hover\:text-banana-600:hover { color: hsl(var(--banana-600)); }
+
+/* Enhanced button states for better visibility */
+.focus\:ring-banana-400:focus { --tw-ring-color: hsl(var(--banana-400)); }
+.focus-visible\:ring-banana-400:focus-visible { --tw-ring-color: hsl(var(--banana-400)); }
+.active\:bg-banana-700:active { background-color: hsl(var(--banana-700)); }
+.active\:scale-95:active { transform: scale(0.95); }
+
+/* Custom banana button variant */
+.btn-banana {
+  background-color: hsl(var(--banana-500));
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-banana:hover {
+  background-color: hsl(var(--banana-600));
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px hsl(var(--banana-500) / 0.3);
+}
+
+.btn-banana:focus-visible {
+  outline: 2px solid hsl(var(--banana-400));
+  outline-offset: 2px;
+}
+
+.btn-banana:active {
+  background-color: hsl(var(--banana-700));
+  transform: translateY(0px) scale(0.98);
+  box-shadow: 0 2px 6px hsl(var(--banana-500) / 0.2);
+}

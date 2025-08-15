@@ -36,6 +36,10 @@ export default function FAQSection() {
     {
       question: "Is my data safe and private?",
       answer: "Yes, we take privacy seriously. Your images are securely stored and processed. We don't use your images to train our models or share them with third parties. You can delete your images at any time."
+    },
+    {
+      question: "How can I contact support or report issues?",
+      answer: "For any questions, technical issues, or feedback, please contact us at support@nanobanana.top. We typically respond within 24 hours and are committed to helping you get the best results from Nano Banana AI."
     }
   ]
 
@@ -50,10 +54,10 @@ export default function FAQSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Frequently Asked Questions
+            <span className="text-banana-500">Nano Banana</span> FAQ
           </h2>
           <p className="text-xl text-gray-600">
-            Everything you need to know about Nano Banana AI image generation.
+            Everything you need to know about Nano Banana AI image generation and editing.
           </p>
         </motion.div>
         

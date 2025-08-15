@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 
 export default function Hero() {
   return (
-    <section className="pt-16 pb-20 bg-gradient-to-br from-banana-50 via-white to-banana-green-50">
+    <section className="pt-16 pb-20 bg-gradient-to-br from-banana-50 via-white to-banana-green-50" itemScope itemType="https://schema.org/SoftwareApplication">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <motion.div 
@@ -26,8 +26,8 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
           >
-            Transform Any Image<br />
-            <span className="text-banana-500">With Simple Text</span>
+            <span className="text-banana-500">Nano Banana</span> AI Image Generator<br />
+            Transform Images with Text
           </motion.h1>
           
           <motion.p 
@@ -36,8 +36,8 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto"
           >
-            Nano Banana's advanced AI model delivers consistent character editing and scene preservation. 
-            Experience one-shot editing that works perfectly every time.
+            Nano Banana delivers advanced AI image generation with perfect character consistency and scene preservation. 
+            Experience the power of Nano Banana's one-shot editing technology.
           </motion.p>
           
           <motion.div 
@@ -48,7 +48,7 @@ export default function Hero() {
           >
             <a href="#generator">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button size="lg" className="bg-banana-500 text-white hover:bg-banana-600 shadow-lg">
+                <Button size="lg" variant="banana" className="shadow-lg">
                   <Rocket className="w-5 h-5 mr-2" />
                   Start Editing Free
                 </Button>

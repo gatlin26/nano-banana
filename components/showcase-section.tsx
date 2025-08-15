@@ -2,51 +2,20 @@
 
 import { motion } from 'framer-motion'
 import { Card, CardContent } from '@/components/ui/card'
+import { useState } from 'react'
 
 export default function ShowcaseSection() {
-  const examples = [
-    {
-      title: "Character Style Transfer",
-      description: "Transform characters while maintaining their identity",
-      beforeImage: "/api/placeholder/300/200",
-      afterImage: "/api/placeholder/300/200",
-      prompt: "Turn into anime style"
-    },
-    {
-      title: "Background Replacement", 
-      description: "Change scenes while preserving the subject",
-      beforeImage: "/api/placeholder/300/200",
-      afterImage: "/api/placeholder/300/200",
-      prompt: "Replace background with beach sunset"
-    },
-    {
-      title: "Outfit Changes",
-      description: "Modify clothing and accessories naturally", 
-      beforeImage: "/api/placeholder/300/200",
-      afterImage: "/api/placeholder/300/200",
-      prompt: "Change to red dress"
-    },
-    {
-      title: "Scene Transformation",
-      description: "Complete environment changes with character preservation",
-      beforeImage: "/api/placeholder/300/200", 
-      afterImage: "/api/placeholder/300/200",
-      prompt: "Place in futuristic city"
-    },
-    {
-      title: "Artistic Style",
-      description: "Apply artistic filters while keeping character features",
-      beforeImage: "/api/placeholder/300/200",
-      afterImage: "/api/placeholder/300/200", 
-      prompt: "Make it oil painting style"
-    },
-    {
-      title: "Mood & Lighting",
-      description: "Change atmosphere and lighting conditions",
-      beforeImage: "/api/placeholder/300/200",
-      afterImage: "/api/placeholder/300/200",
-      prompt: "Make it golden hour lighting"
-    }
+  const [selectedImage, setSelectedImage] = useState<string | null>(null)
+  
+  // Gallery images from the public/gallery folder
+  const galleryImages = [
+    'nano-banana-new-image-model-examples-v0-0uypne6v8uif1.webp',
+    'nano-banana-new-image-model-examples-v0-c8b9mo2b7uif1.webp',
+    'nano-banana-new-image-model-examples-v0-df0pa95b8uif1.webp',
+    'nano-banana-new-image-model-examples-v0-f6benr39auif1.webp',
+    'nano-banana-new-image-model-examples-v0-gioq3ao79uif1.webp',
+    'nano-banana-new-image-model-examples-v0-o7dv8xyx9uif1.webp',
+    'nano-banana-new-image-model-examples-v0-ve4kg44rauif1.webp'
   ]
 
   return (
@@ -62,13 +31,19 @@ export default function ShowcaseSection() {
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
             🎨 Showcase Gallery
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Explore stunning examples of what Nano Banana can create. From character transformations to scene changes.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-4">
+            Explore stunning examples of AI-generated images and experience the charm of advanced technology.
           </p>
+          <div className="inline-flex items-center bg-gradient-to-r from-purple-100 to-blue-100 px-4 py-2 rounded-full">
+            <span className="text-sm font-medium text-purple-700">
+              ⚡ Powered by ThunderBeanage
+            </span>
+          </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {examples.map((example, index) => (
+        {/* Gallery Grid - Max 3 per row */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {galleryImages.map((imageName, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -76,41 +51,67 @@ export default function ShowcaseSection() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300">
+              <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer">
                 <CardContent className="p-0">
-                  <div className="grid grid-cols-2 gap-0">
-                    <div className="relative">
-                      <div className="aspect-square bg-gray-200 flex items-center justify-center">
-                        <span className="text-gray-500 text-sm">Before</span>
-                      </div>
-                      <div className="absolute top-2 left-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
-                        Original
-                      </div>
-                    </div>
-                    <div className="relative">
-                      <div className="aspect-square bg-gradient-to-br from-banana-100 to-banana-200 flex items-center justify-center">
-                        <span className="text-banana-700 text-sm">After</span>
-                      </div>
-                      <div className="absolute top-2 right-2 bg-banana-500 text-white text-xs px-2 py-1 rounded">
-                        AI Result
+                  <div className="relative">
+                    <img
+                      src={`/gallery/${imageName}`}
+                      alt={`AI generated showcase image ${index + 1}`}
+                      className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-300"
+                      onClick={() => setSelectedImage(`/gallery/${imageName}`)}
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                      <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
+                          <span className="text-sm font-medium text-gray-800">Click to view</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="font-semibold text-gray-900 mb-2">{example.title}</h3>
-                    <p className="text-gray-600 text-sm mb-3">{example.description}</p>
-                    <div className="bg-gray-100 rounded-lg p-3">
-                      <p className="text-xs text-gray-700">
-                        <span className="font-medium">Prompt:</span> "{example.prompt}"
-                      </p>
-                    </div>
+
                   </div>
                 </CardContent>
               </Card>
             </motion.div>
           ))}
         </div>
+
+        {/* Credit Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="text-center mt-12"
+        >
+          <p className="text-gray-500 text-sm">
+            All images generated by ThunderBeanage AI model
+          </p>
+        </motion.div>
       </div>
+
+      {/* Modal for full-size image view */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div className="relative max-w-4xl max-h-full">
+            <img
+              src={selectedImage}
+              alt="Full size showcase image"
+              className="max-w-full max-h-full object-contain rounded-lg"
+            />
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-4 right-4 bg-white/20 hover:bg-white/30 text-white rounded-full p-2 transition-colors"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   )
 }

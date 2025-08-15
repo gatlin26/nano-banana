@@ -52,10 +52,10 @@ export default function HowItWorksSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            How Nano Banana Works
+            How <span className="text-banana-500">Nano Banana</span> Works
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Transform your images in just three simple steps with our advanced AI technology.
+            Transform your images in just three simple steps with Nano Banana's advanced AI technology.
           </p>
         </motion.div>
         
@@ -88,7 +88,7 @@ export default function HowItWorksSection() {
           className="bg-white rounded-2xl shadow-lg p-8"
         >
           <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-            What Makes Nano Banana Special
+            What Makes <span className="text-banana-500">Nano Banana</span> Special
           </h3>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

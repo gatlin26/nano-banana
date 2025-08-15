@@ -47,7 +47,7 @@ export default function Navigation() {
             </a>
             <a href="#generator">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button className="bg-banana-500 text-white hover:bg-banana-600">
+                <Button variant="banana">
                   Try Now
                 </Button>
               </motion.div>
@@ -90,7 +90,7 @@ export default function Navigation() {
               FAQ
             </a>
             <a href="#generator">
-              <Button className="w-full bg-banana-500 text-white hover:bg-banana-600">
+              <Button variant="banana" className="w-full">
                 Try Now
               </Button>
             </a>
