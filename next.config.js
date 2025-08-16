@@ -31,6 +31,7 @@ const nextConfig = {
   // 确保环境变量正确传递
   env: {
     CUSTOM_KEY: process.env.CUSTOM_KEY,
+    NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID,
   },
 }
 

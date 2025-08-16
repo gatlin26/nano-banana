@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { Toaster } from '@/components/ui/toaster'
 import StructuredData from '@/components/structured-data'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import './globals.css'
 import Providers from './providers'
 
@@ -61,6 +62,9 @@ export default function RootLayout({
             <Toaster />
           </TooltipProvider>
         </Providers>
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        )}
       </body>
     </html>
   )
