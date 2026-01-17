@@ -48,11 +48,6 @@ export default function Footer() {
               className="space-y-2"
             >
               <li>
-                <Link href="#generator" className="text-gray-300 hover:text-banana-400 transition-colors">
-                  AI Generator
-                </Link>
-              </li>
-              <li>
                 <Link href="#showcase" className="text-gray-300 hover:text-banana-400 transition-colors">
                   Showcase
                 </Link>
@@ -66,6 +61,26 @@ export default function Footer() {
                 <Link href="#faq" className="text-gray-300 hover:text-banana-400 transition-colors">
                   FAQ
                 </Link>
+              </li>
+              <li>
+                <a 
+                  href="https://skin-enhancer.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-banana-400 transition-colors"
+                >
+                  Skin Enhancer AI
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://aicouple.org/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-banana-400 transition-colors"
+                >
+                  AI Couple
+                </a>
               </li>
             </motion.ul>
           </div>

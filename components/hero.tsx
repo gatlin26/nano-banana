@@ -46,7 +46,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
           >
-            <a href="#generator">
+            <a href="https://www.editphoto-ai.com/" target="_blank" rel="noopener noreferrer">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button size="lg" variant="blue" className="shadow-lg">
                   <Rocket className="w-5 h-5 mr-2" />

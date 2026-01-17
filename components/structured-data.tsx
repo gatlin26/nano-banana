@@ -73,7 +73,7 @@ export default function StructuredData() {
           "@type": "ContactPoint",
           "email": "support@nanobanana.top",
           "contactType": "customer support",
-          "availableLanguage": ["English", "Chinese"]
+          "availableLanguage": ["English"]
         },
         "logo": {
           "@type": "ImageObject",

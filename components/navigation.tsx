@@ -33,9 +33,6 @@ export default function Navigation() {
             <a href="#home" className="text-gray-700 hover:text-blue-600 transition-colors">
               Home
             </a>
-            <a href="#generator" className="text-gray-700 hover:text-blue-600 transition-colors">
-              Generator
-            </a>
             <a href="#showcase" className="text-gray-700 hover:text-blue-600 transition-colors">
               Showcase
             </a>
@@ -45,7 +42,7 @@ export default function Navigation() {
             <a href="#faq" className="text-gray-700 hover:text-blue-600 transition-colors">
               FAQ
             </a>
-            <a href="#generator">
+            <a href="https://www.editphoto-ai.com/" target="_blank" rel="noopener noreferrer">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button variant="blue">
                   Try Now
@@ -77,9 +74,6 @@ export default function Navigation() {
             <a href="#home" className="block text-gray-700 hover:text-blue-600 transition-colors">
               Home
             </a>
-            <a href="#generator" className="block text-gray-700 hover:text-blue-600 transition-colors">
-              Generator
-            </a>
             <a href="#showcase" className="block text-gray-700 hover:text-blue-600 transition-colors">
               Showcase
             </a>
@@ -89,7 +83,7 @@ export default function Navigation() {
             <a href="#faq" className="block text-gray-700 hover:text-blue-600 transition-colors">
               FAQ
             </a>
-            <a href="#generator">
+            <a href="https://www.editphoto-ai.com/" target="_blank" rel="noopener noreferrer">
               <Button variant="blue" className="w-full">
                 Try Now
               </Button>
